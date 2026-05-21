@@ -6,6 +6,10 @@
     <title>Document</title>
      <link rel="stylesheet" href="style.css">
 
+     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+
+     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+     
      <script src="script.js"></script>
 </head>
 <body>
@@ -13,11 +17,13 @@
     <br>
     <br>
     <br>
-    <input type="text">
+    <input id="input" type="text">
     <br>
     <br>
 
-    <button> add item</button>
+    <div id="output"></div>
+
+    <button onclick="addItem()"> add item</button>
 
     <button>remove item</button>
 </body>
