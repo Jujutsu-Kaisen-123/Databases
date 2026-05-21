@@ -8,3 +8,26 @@ const firebaseConfig = {
     appId: "1:405729694759:web:01770748a583900b282a02",
     measurementId: "G-WGFKGPB1VL"
   };
+
+firebase.initializeApp(firebaseConfig);
+
+function addItem(){
+  var item= document.getElementById("input").value;
+
+  firebase.database().ref("/").child(item).update({
+    purpose: "123",
+  })
+
+  firebase.database().ref("/").on("value",function(snapshot){
+    document.getElementById("output").innerHTML=""
+
+    snapshot.forEach(function(childSnapshot){
+      item=childSnapshot.key
+
+      createtag="<p>"+item+"</p>"
+
+      document.getElementById("output").innerHTML+= createtagz
+    })
+  })
+}
+  
